@@ -29,3 +29,5 @@ spec:
         env:
         - name: RUNNER_TOKEN
           value: "<INSERT-TOKEN>"
+        - name: DISABLE_NETWORK_SHAPING
+          value: "true"

@@ -1,0 +1,11 @@
+kind: SecurityContextConstraints
+apiVersion: security.openshift.io/v1
+metadata:
+  name: rigor-pl
+users:
+- system:serviceaccount:<oc-project-name>:rigor-agent
+priority: 10
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
