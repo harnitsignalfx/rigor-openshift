@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rigor-pl
+  name: rigor-pl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rigor-pl
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: rigor-pl
+    spec:
+      serviceAccountName: rigor-agent
+      containers:
+      - image: docker.rigor.com/agent:v6.58
+        name: rigor-pl
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "8Gi"
+            cpu: "2"
+        env:
+        - name: RUNNER_TOKEN
+          value: "<INSERT-TOKEN>"
+        - name: DISABLE_NETWORK_SHAPING
+          value: "true"
