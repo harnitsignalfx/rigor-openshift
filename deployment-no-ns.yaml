@@ -17,7 +17,7 @@ spec:
     spec:
       serviceAccountName: rigor-agent
       containers:
-      - image: docker.rigor.com/agent:v6.58
+      - image: docker.rigor.com/agent:v6.61
         name: rigor-pl
         resources:
           requests:
